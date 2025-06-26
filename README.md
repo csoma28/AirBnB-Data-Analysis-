@@ -1,113 +1,111 @@
 
-# 🏙️ Airbnb NYC EDA
+# Airbnb NYC Exploratory Data Analysis (EDA)
 
-![Banner](https://img.shields.io/badge/Project-Airbnb%20NYC%20EDA-blueviolet?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge)
+## Overview
 
-> A comprehensive exploratory data analysis (EDA) of Airbnb listings in New York City to uncover meaningful trends, optimize pricing strategies, and assess platform behavior — all strictly based on real data.
+This project presents a structured exploratory data analysis (EDA) of Airbnb listings in New York City. Using publicly available data, we explore listing characteristics, pricing patterns, host behavior, and guest engagement metrics. All conclusions are based strictly on observed data.
 
 ---
 
-## 📂 Dataset Summary
+## Dataset Summary
 
 - **Source:** Airbnb NYC public dataset
 - **Total Listings:** 20,736
-- **Fields:** Location (borough, coordinates), price, availability, rating, reviews, license status, bedrooms, beds, baths, etc.
+- **Fields:** Neighborhood, location, price, availability, ratings, reviews, licensing, bedrooms, beds, baths, etc.
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
-- Understand listing distribution by geography and room type  
-- Analyze price trends and rating distributions  
-- Evaluate host behavior and availability across boroughs  
-- Extract actionable insights for Airbnb hosts and analysts  
-
----
-
-## 🔍 EDA Pipeline
-
-1. **Data Cleaning**
-   - Handled missing values and standardized data types
-   - Addressed outliers in price and availability using quantile filtering
-
-2. **Univariate Analysis**
-   - Histograms and boxplots for price, reviews, availability
-   - Distribution of listings by room type and neighborhood group
-
-3. **Bivariate & Correlation Analysis**
-   - Price vs. room type, borough, and host activity
-   - Correlation heatmap for numerical variables
-
-4. **Geospatial Insights**
-   - Density plots by longitude/latitude for listing clusters
-   - Price and availability heatmaps by borough
+- Explore the spatial and categorical distribution of listings  
+- Analyze pricing and availability trends  
+- Examine guest engagement through reviews and ratings  
+- Investigate host behavior, including multi-listing patterns  
+- Derive insights for hosts, analysts, and platform policy makers  
 
 ---
 
-## 📌 Key Insights (Strictly Based on Dataset)
+## EDA Workflow
 
-### 💰 Pricing
-- **Median price:** $125 | **75th percentile:** $199  
-- 75% of listings are priced under $199 — luxury listings (above $500) are rare and right-skew the average.
-- Most affordable boroughs: **Queens** and **Bronx**
+### Data Cleaning
+- Standardized column formats and types  
+- Treated missing values and invalid entries  
+- Filtered out extreme outliers in `price` and `availability`  
 
-### 🛏️ Room Types
-- Most common: **Entire home/apartment** > **Private room**
-- Private rooms are more frequent in boroughs outside Manhattan
+### Univariate & Bivariate Analysis
+- Distribution analysis of `price`, `availability`, and `rating`  
+- Relationship between `price` and `room_type`, `borough`, and `host activity`  
 
-### 📅 Availability
-- **Median availability:** 215 days/year
-- ~25% of listings are rarely available (< 87 days), while others are available year-round (365 days), suggesting a mix of casual vs. professional hosts.
+### Correlation & Geospatial Mapping
+- Correlation heatmap for numerical features  
+- Visualization of listing density and pricing across NYC  
 
-### 🌟 Ratings & Reviews
-- Listings with **ratings between 4.6–5.0** dominate the dataset
-- Listings with **higher reviews per month** tend to have **moderate prices (under $150)** and high availability
+---
 
-### 👥 Host Behavior
+## Key Insights (Based on Data)
+
+### Pricing
+- **Median Price:** $125  
+- 75% of listings priced under $199  
+- Listings above $500 are rare and skew the mean upward  
+
+### Room Types
+- Most common type: Entire home/apartment  
+- Private rooms are more frequent outside Manhattan  
+
+### Availability
+- **Median availability:** 215 days/year  
+- About 25% of listings have very low availability (< 87 days/year)  
+- Listings with 365 days availability likely reflect professional hosts  
+
+### Ratings & Reviews
+- Majority of listings have ratings between 4.6 and 5.0  
+- Higher review frequency correlates with availability and moderate pricing  
+
+### Host Behavior
 - **Median listings per host:** 2  
-- A small subset of hosts manages **>100 listings**, suggesting commercial usage
-- Many listings are marked with **"No License"**, raising potential compliance concerns
+- Small number of hosts have over 100 listings  
+- Many listings lack licensing information  
 
 ---
 
-## 💡 Recommendations (Based on Data)
+## Recommendations
 
-### For Hosts:
-- **Target the sweet spot:** Listings in the $100–$150 range receive the most consistent reviews.
-- **Improve availability:** Listings with >200 days of availability tend to attract more reviews/month.
-- **Optimize for rating:** Aim for ratings above 4.6, which appears to correlate with more guest traffic.
-- **List clearly:** Provide complete info (beds, baths, license) to build guest trust and visibility.
+### For Hosts
+- Price competitively in the $100–$150 range for more consistent reviews  
+- Increase availability beyond 200 days to improve visibility and bookings  
+- Ensure complete and transparent listings (beds, baths, license info)  
 
-### For Airbnb:
-- **Highlight commercial activity:** Hosts with >50 listings may need distinct categorization.
-- **Encourage transparency:** Listings with "No License" tags should be flagged for review.
-- **Consider price caps:** Outliers above $500 distort the platform’s pricing perception.
-
----
-
-## 🛠️ Technologies Used
-
-- **Python 3.10+**
-- Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`
-- Environment: Jupyter Notebook
+### For Airbnb
+- Monitor hosts managing >50 listings as potential commercial operators  
+- Encourage license transparency across the platform  
+- Consider mechanisms to control extreme pricing outliers  
 
 ---
 
-## 🚀 How to Run Locally
+## Technologies Used
 
+- Python 3.10+  
+- pandas, numpy, seaborn, matplotlib  
+- Jupyter Notebook environment  
+
+---
+
+## Running the Project
+
+1. Clone the repository or download the notebook  
+2. Install dependencies:
 ```bash
-git clone https://github.com/yourusername/airbnb-nyc-eda.git
-cd airbnb-nyc-eda
-pip install -r requirements.txt  # or manually install pandas, seaborn, etc.
+pip install pandas numpy seaborn matplotlib
+```
+3. Run the notebook:
+```bash
 jupyter notebook Airbnb\ NY\ EDA.ipynb
 ```
 
 ---
 
-## 📁 Project Structure
+## Project Files
 
 ```
 ├── Airbnb NY EDA.ipynb     # Main notebook
@@ -117,8 +115,6 @@ jupyter notebook Airbnb\ NY\ EDA.ipynb
 
 ---
 
-## 📎 License
+## License
 
-MIT License. This project is for educational and analytical purposes. Dataset courtesy of publicly available Airbnb NYC data.
-
----
+This project is open for educational use. Data is publicly sourced and intended for analysis and learning purposes.
